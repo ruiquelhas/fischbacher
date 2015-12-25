@@ -1,0 +1,43 @@
+{
+  "name": "fischbacher",
+  "version": "0.0.1",
+  "description": "Server-level lafayette validation for hapi",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "lab -a code -t 100 -L",
+    "test-tap": "lab -a code -r tap -o tests.tap",
+    "test-cov-html": "lab -a code -r html -o coverage.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ruiquelhas/fischbacher.git"
+  },
+  "keywords": [
+    "file",
+    "hapi",
+    "multipart/form-data",
+    "payload",
+    "signature",
+    "validation"
+  ],
+  "author": "Rui Quelhas <rfpquelhas@gmail.com>",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/ruiquelhas/fischbacher/issues"
+  },
+  "homepage": "https://github.com/ruiquelhas/fischbacher#readme",
+  "devDependencies": {
+    "code": "2.x.x",
+    "form-data": "0.x.x",
+    "hapi": "11.x.x",
+    "lab": "8.x.x",
+    "stream-to-promise": "1.x.x"
+  },
+  "dependencies": {
+    "lafayette": "1.x.x",
+    "supervizor": "1.x.x"
+  },
+  "engines": {
+    "node": ">= 4.0.0"
+  }
+}
