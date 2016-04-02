@@ -1,17 +1,18 @@
 'use strict';
 
-const fs = require('fs');
-const os = require('os');
-const path = require('path');
+const Fs = require('fs');
+const Os = require('os');
+const Path = require('path');
 
 const Code = require('code');
 const FormData = require('form-data');
 const Hapi = require('hapi');
 const Lab = require('lab');
-const streamToPromise = require('stream-to-promise');
+const StreamToPromise = require('stream-to-promise');
+
+const Fischbacher = require('../lib/');
 
 const lab = exports.lab = Lab.script();
-const Fischbacher = require('../lib/');
 
 lab.experiment('fischbacher', () => {
 
@@ -25,7 +26,7 @@ lab.experiment('fischbacher', () => {
         const setup = {
             register: Fischbacher,
             options: {
-                whitelist: ['png']
+                whitelist: ['image/png']
             }
         };
 
@@ -47,19 +48,19 @@ lab.experiment('fischbacher', () => {
 
     lab.test('should return error if some file in the payload is not allowed', (done) => {
 
-        const png = path.join(os.tmpdir(), 'foo.png');
-        fs.createWriteStream(png).end(new Buffer([0x89, 0x50]));
+        const png = Path.join(Os.tmpdir(), 'foo.png');
+        Fs.createWriteStream(png).end(new Buffer('89504e47', 'hex'));
 
-        const gif = path.join(os.tmpdir(), 'foo.gif');
-        fs.createWriteStream(gif).end(new Buffer([0x47, 0x49]));
+        const gif = Path.join(Os.tmpdir(), 'foo.gif');
+        Fs.createWriteStream(gif).end(new Buffer('47494638', 'hex'));
 
         const form = new FormData();
-        form.append('file1', fs.createReadStream(gif));
-        form.append('file2', fs.createReadStream(png));
-        form.append('file3', fs.createReadStream(gif));
+        form.append('file1', Fs.createReadStream(gif));
+        form.append('file2', Fs.createReadStream(png));
+        form.append('file3', Fs.createReadStream(gif));
         form.append('foo', 'bar');
 
-        streamToPromise(form).then((payload) => {
+        StreamToPromise(form).then((payload) => {
 
             server.inject({ headers: form.getHeaders(), method: 'POST', payload: payload, url: '/' }, (response) => {
 
@@ -77,15 +78,15 @@ lab.experiment('fischbacher', () => {
 
     lab.test('should return control to the server if all files the payload are allowed', (done) => {
 
-        const png = path.join(os.tmpdir(), 'foo.png');
-        fs.createWriteStream(png).end(new Buffer([0x89, 0x50]));
+        const png = Path.join(Os.tmpdir(), 'foo.png');
+        Fs.createWriteStream(png).end(new Buffer('89504e47', 'hex'));
 
         const form = new FormData();
-        form.append('file1', fs.createReadStream(png));
-        form.append('file2', fs.createReadStream(png));
+        form.append('file1', Fs.createReadStream(png));
+        form.append('file2', Fs.createReadStream(png));
         form.append('foo', 'bar');
 
-        streamToPromise(form).then((payload) => {
+        StreamToPromise(form).then((payload) => {
 
             server.inject({ headers: form.getHeaders(), method: 'POST', payload: payload, url: '/' }, (response) => {
 

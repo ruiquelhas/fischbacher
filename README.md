@@ -4,7 +4,6 @@ Server-level [lafayette](https://github.com/ruiquelhas/lafayette) validation for
 [![NPM Version][fury-img]][fury-url] [![Build Status][travis-img]][travis-url] [![Coverage Status][coveralls-img]][coveralls-url] [![Dependencies][david-img]][david-url]
 
 ## Table of Contents
-
 - [Installation](#installation)
 - [Usage](#usage)
   - [Example](#example)
@@ -18,8 +17,7 @@ $ npm install fischbacher
 ```
 
 ## Usage
-
-Register the package as a server plugin to enable validation for each route that parses — `parse: true` — and creates a temporary copy of the request payload — `output: 'file'`. For every other route with a different configuration, the validation is skipped.
+Register the package as a server plugin to enable validation for each route that parses -- `parse: true` -- and creates a temporary copy of the request payload -- `output: 'file'`. For every other route with a different configuration, the validation is skipped.
 
 If the validation fails, a [joi](https://github.com/hapijs/joi)-like `400 Bad Request` error is returned alongside an additional `content-validation: failure` response header. If everything is ok, the response will ultimately contain a `content-validation: success` header.
 
@@ -29,7 +27,7 @@ If the validation fails, a [joi](https://github.com/hapijs/joi)-like `400 Bad Re
 const Hapi = require('hapi');
 const Fischbacher = require('fischbacher');
 
-server = new Hapi.Server();
+const server = new Hapi.Server();
 server.connection({
     // go nuts
 });
@@ -38,7 +36,7 @@ const plugin = {
     register: Fischbacher,
     options: {
       // Allow png files only
-      whitelist: ['png']
+      whitelist: ['image/png']
     }
 };
 
@@ -61,8 +59,7 @@ server.register(plugin, (err) => {
 ```
 
 ## Supported File Types
-
-The same as [magik](https://github.com/ruiquelhas/magik#supported-file-types).
+The same as [file-type](https://github.com/sindresorhus/file-type#supported-file-types).
 
 [coveralls-img]: https://coveralls.io/repos/ruiquelhas/fischbacher/badge.svg
 [coveralls-url]: https://coveralls.io/github/ruiquelhas/fischbacher
