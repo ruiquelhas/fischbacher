@@ -31,10 +31,9 @@
   "devDependencies": {
     "code": "2.x.x",
     "coveralls": "2.x.x",
-    "form-data": "0.x.x",
     "hapi": "13.x.x",
     "lab": "10.x.x",
-    "stream-to-promise": "1.x.x"
+    "multi-part": "1.x.x"
   },
   "dependencies": {
     "lafayette": "2.x.x",
