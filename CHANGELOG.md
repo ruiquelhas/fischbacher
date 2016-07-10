@@ -1,6 +1,17 @@
 # Changelog
 
-## [v2.0.0](https://github.com/ruiquelhas/fischbacher/tree/v2.0.0) (2016-04-03)
+## [v2.0.1](https://github.com/ruiquelhas/fischbacher/tree/v2.0.1) (2016-07-10)
+[Full Changelog](https://github.com/ruiquelhas/fischbacher/compare/v2.0.0...v2.0.1)
+
+**Closed issues:**
+
+- Simplify test suite [\#7](https://github.com/ruiquelhas/fischbacher/issues/7)
+
+**Merged pull requests:**
+
+- Update test suite to use stream payloads [\#8](https://github.com/ruiquelhas/fischbacher/pull/8) ([ruiquelhas](https://github.com/ruiquelhas))
+
+## [v2.0.0](https://github.com/ruiquelhas/fischbacher/tree/v2.0.0) (2016-04-02)
 [Full Changelog](https://github.com/ruiquelhas/fischbacher/compare/v1.0.1...v2.0.0)
 
 **Closed issues:**
