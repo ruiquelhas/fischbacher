@@ -59,7 +59,7 @@ lab.experiment('fischbacher', () => {
         form.append('file3', Fs.createReadStream(gif));
         form.append('foo', 'bar');
 
-        server.inject({ headers: form.getHeaders(), method: 'POST', payload: form.get(), url: '/' }, (response) => {
+        server.inject({ headers: form.getHeaders(), method: 'POST', payload: form.stream(), url: '/' }, (response) => {
 
             Code.expect(response.statusCode).to.equal(400);
             Code.expect(response.headers['content-validation']).to.equal('failure');
@@ -82,7 +82,7 @@ lab.experiment('fischbacher', () => {
         form.append('file2', Fs.createReadStream(png));
         form.append('foo', 'bar');
 
-        server.inject({ headers: form.getHeaders(), method: 'POST', payload: form.get(), url: '/' }, (response) => {
+        server.inject({ headers: form.getHeaders(), method: 'POST', payload: form.stream(), url: '/' }, (response) => {
 
             Code.expect(response.statusCode).to.equal(200);
             Code.expect(response.headers['content-validation']).to.equal('success');
