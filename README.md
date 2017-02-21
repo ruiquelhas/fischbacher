@@ -1,7 +1,7 @@
 # fischbacher
 Server-level [lafayette](https://github.com/ruiquelhas/lafayette) validation for [hapi](https://github.com/hapijs/hapi).
 
-[![NPM Version][fury-img]][fury-url] [![Build Status][travis-img]][travis-url] [![Coverage Status][coveralls-img]][coveralls-url] [![Dependencies][david-img]][david-url]
+[![NPM Version][version-img]][version-url] [![Build Status][travis-img]][travis-url] [![Coverage Status][coveralls-img]][coveralls-url] [![Dependencies][david-img]][david-url] [![Dev Dependencies][david-dev-img]][david-dev-url]
 
 ## Table of Contents
 - [Installation](#installation)
@@ -61,11 +61,13 @@ server.register(plugin, (err) => {
 ## Supported File Types
 The same as [file-type](https://github.com/sindresorhus/file-type#supported-file-types).
 
-[coveralls-img]: https://coveralls.io/repos/ruiquelhas/fischbacher/badge.svg
+[coveralls-img]: https://img.shields.io/coveralls/ruiquelhas/fischbacher.svg?style=flat-square
 [coveralls-url]: https://coveralls.io/github/ruiquelhas/fischbacher
-[david-img]: https://david-dm.org/ruiquelhas/fischbacher.svg
+[david-img]: https://img.shields.io/david/ruiquelhas/fischbacher.svg?style=flat-square
 [david-url]: https://david-dm.org/ruiquelhas/fischbacher
-[fury-img]: https://badge.fury.io/js/fischbacher.svg
-[fury-url]: https://badge.fury.io/js/fischbacher
-[travis-img]: https://travis-ci.org/ruiquelhas/fischbacher.svg
+[david-dev-img]: https://img.shields.io/david/dev/ruiquelhas/fischbacher.svg?style=flat-square
+[david-dev-url]: https://david-dm.org/ruiquelhas/fischbacher?type=dev
+[version-img]: https://img.shields.io/npm/v/fischbacher.svg?style=flat-square
+[version-url]: https://www.npmjs.com/package/fischbacher
+[travis-img]: https://img.shields.io/travis/ruiquelhas/fischbacher.svg?style=flat-square
 [travis-url]: https://travis-ci.org/ruiquelhas/fischbacher
