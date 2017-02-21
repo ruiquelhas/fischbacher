@@ -1,5 +1,13 @@
 # Changelog
 
+## [v2.0.3](https://github.com/ruiquelhas/fischbacher/tree/v2.0.3) (2017-02-21)
+[Full Changelog](https://github.com/ruiquelhas/fischbacher/compare/v2.0.2...v2.0.3)
+
+**Fixed bugs:**
+
+- Flaky tests run without file fixtures available [\#10](https://github.com/ruiquelhas/fischbacher/issues/10)
+- Support tasks [\#11](https://github.com/ruiquelhas/fischbacher/pull/11) ([ruiquelhas](https://github.com/ruiquelhas))
+
 ## [v2.0.2](https://github.com/ruiquelhas/fischbacher/tree/v2.0.2) (2016-10-31)
 [Full Changelog](https://github.com/ruiquelhas/fischbacher/compare/v2.0.1...v2.0.2)
 
