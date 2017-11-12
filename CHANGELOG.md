@@ -1,5 +1,12 @@
 # Changelog
 
+## [v3.0.0](https://github.com/ruiquelhas/fischbacher/tree/v3.0.0) (2017-11-12)
+[Full Changelog](https://github.com/ruiquelhas/fischbacher/compare/v2.0.3...v3.0.0)
+
+**Merged pull requests:**
+
+- Add support for hapi v17 [\#12](https://github.com/ruiquelhas/fischbacher/pull/12) ([ruiquelhas](https://github.com/ruiquelhas))
+
 ## [v2.0.3](https://github.com/ruiquelhas/fischbacher/tree/v2.0.3) (2017-02-21)
 [Full Changelog](https://github.com/ruiquelhas/fischbacher/compare/v2.0.2...v2.0.3)
 
