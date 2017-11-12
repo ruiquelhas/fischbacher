@@ -27,23 +27,11 @@ If the validation fails, a [joi](https://github.com/hapijs/joi)-like `400 Bad Re
 const Hapi = require('hapi');
 const Fischbacher = require('fischbacher');
 
-const server = new Hapi.Server();
-server.connection({
-    // go nuts
-});
-
-const plugin = {
-    register: Fischbacher,
-    options: {
-        // Allow png files only
-        whitelist: ['image/png']
-    }
-};
-
-server.register(plugin, (err) => {
+try {
+    const server = new Hapi.Server();
 
     server.route({
-        config: {
+        options: {
             payload: {
                 output: 'file',
                 parse: true
@@ -52,14 +40,23 @@ server.register(plugin, (err) => {
         }
     });
 
-    server.start(() => {
-        // go nuts
+    await server.register({
+        plugin: Fischbacher,
+        options: {
+            // Allow png files only
+            whitelist: ['image/png']
+        }
     });
-});
+
+    await server.start();
+}
+catch (err) {
+    throw err;
+}
 ```
 
 ## Supported File Types
-The same as [file-type](https://github.com/sindresorhus/file-type#supported-file-types).
+The same as [file-type](https://github.com/sindresorhus/file-type/tree/v7.0.0#supported-file-types).
 
 [coveralls-img]: https://img.shields.io/coveralls/ruiquelhas/fischbacher.svg?style=flat-square
 [coveralls-url]: https://coveralls.io/github/ruiquelhas/fischbacher
